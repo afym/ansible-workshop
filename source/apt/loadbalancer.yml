@@ -1,0 +1,6 @@
+---
+- hosts: loadbalancer # host selector : ansible --list-hosts loadbalancer
+  become: true # sudo command
+  tasks:
+    - name: installing nginx
+      apt: name=nginx state=present update_cache=yes

@@ -1,0 +1,8 @@
+---
+- hosts: control
+  become: true # sudo command
+  tasks:
+  - name: installing packages
+    apt: name={{item}} state=present update_cache=yes
+    with_items:
+    - curl

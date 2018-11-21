@@ -1,0 +1,6 @@
+---
+- hosts: database
+  become: true # sudo command
+  tasks:
+  - name: installing mysql
+    apt: name=mysql-server state=present update_cache=yes
