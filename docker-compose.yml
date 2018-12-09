@@ -1,0 +1,11 @@
+version: "3"
+services:
+  ansible:
+    image: ansible-docker
+    build: ./tools/ansible/ubuntu
+    #image: ansible/ansible:ubuntu1404
+    volumes:
+    - ./source:/home/ansible
+    - ./command:/home/devops
+    #- ./config:/etc/ansible
+    command: sh /home/devops/run.sh
